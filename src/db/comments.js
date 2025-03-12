@@ -1,5 +1,5 @@
 import { AppDataSource } from './config.js';
-import CommentEntity from './entities/comment.js';
+import CommentEntity from './orm/comment.js';
 
 const commentRepository = AppDataSource.getRepository(CommentEntity);
 
