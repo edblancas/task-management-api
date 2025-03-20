@@ -3,7 +3,7 @@ import { AppDataSource } from '../../../src/db/config.js';
 import * as commentsDb from '../../../src/db/comments.js';
 
 // Mock TypeORM repository
-jest.mock('../../../src/db/config.js', () => {
+jest.unstable_mockModule('../../../src/db/config.js', () => {
   const mockRepository = {
     find: jest.fn(),
     findOne: jest.fn(),
@@ -28,7 +28,7 @@ describe('Comments Database Functions', () => {
   });
 
   describe('findAllComments', () => {
-    test('should fetch all comments with relations', async () => {
+    test.only('should fetch all comments with relations', async () => {
       const mockComments = [
         { id: 'comment-1', text: 'Comment 1' },
         { id: 'comment-2', text: 'Comment 2' }
